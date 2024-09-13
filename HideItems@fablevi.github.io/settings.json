@@ -1,0 +1,10 @@
+{
+    "state": "1",
+    "visibility": true,
+    "defaultVisibility": false,
+    "visibleChildren": [
+        "VitalsMenuButton",
+        "Show Desktop Applet",
+        "Gjs_ui_dateMenu_DateMenuButton"
+    ]
+}
