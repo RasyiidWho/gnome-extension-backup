@@ -7,11 +7,8 @@
   "gettext-domain": "openbar",
   "name": "Open Bar",
   "settings-schema": "org.gnome.shell.extensions.openbar",
-  "shell-version": [
-    "45",
-    "46"
-  ],
+  "shell-version": ["45", "46"],
   "url": "https://github.com/neuromorph/openbar",
   "uuid": "openbar@neuromorph",
-  "version": 38
+  "version": 999
 }

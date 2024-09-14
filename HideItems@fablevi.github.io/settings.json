@@ -1,10 +1,11 @@
 {
     "state": "1",
-    "visibility": true,
+    "visibility": false,
     "defaultVisibility": false,
     "visibleChildren": [
         "VitalsMenuButton",
         "Show Desktop Applet",
-        "Gjs_ui_dateMenu_DateMenuButton"
+        "Gjs_ui_dateMenu_DateMenuButton",
+        "Color Picker"
     ]
 }
