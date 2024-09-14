@@ -201,7 +201,7 @@
 }
 
 .selected-dark {
-  background-color: rgb(54, 58, 79)
+  background-color: rgb(54, 54, 77);
 }
 
 .selected-light {
@@ -209,7 +209,7 @@
 }
 
 .focused-dark {
-  background-color: rgb(54, 58, 79)
+  background-color: rgb(54, 54, 77);
 }
 
 .focused-light {
