@@ -1,0 +1,660 @@
+[HideItems]
+allindicator=['VitalsMenuButton', 'Stop Screencast', 'Stop Screen Sharing', 'Dwell Click', 'Accessibility', 'Keyboard', 'Gjs_ui_dateMenu_DateMenuButton', 'Show Desktop Applet']
+nothiddenindicator=['VitalsMenuButton', 'Show Desktop Applet', 'Gjs_ui_dateMenu_DateMenuButton']
+topbarupdater='0'
+
+[advanced-alt-tab-window-switcher]
+app-switcher-popup-icon-size=283
+hot-edge-mode=1
+hot-edge-position=0
+show-dash=0
+switcher-popup-hover-select=true
+switcher-popup-interactive-indicators=true
+switcher-popup-position=2
+switcher-popup-preview-selected=1
+switcher-popup-prim-click-in=0
+switcher-popup-start-search=false
+switcher-popup-status=false
+switcher-popup-sync-filter=false
+switcher-popup-theme=3
+switcher-popup-timeout=147
+switcher-popup-tooltip-label-scale=120
+switcher-popup-tooltip-title=3
+switcher-popup-wrap=true
+switcher-ws-thumbnails=0
+win-switch-include-modals=false
+win-switch-minimized-to-end=false
+win-switcher-popup-icon-size=32
+win-switcher-popup-mid-click-item=14
+win-switcher-popup-order=1
+win-switcher-popup-preview-size=192
+win-switcher-popup-prim-click-item=2
+win-switcher-popup-titles=1
+win-switcher-popup-ws-indexes=false
+win-switcher-single-prev-size=256
+ws-switch-popup=false
+
+[always-show-titles-in-overview]
+always-show-window-closebuttons=false
+app-icon-position='Center'
+hide-background=false
+move-window-title-to-bottom-for-video-player=false
+move-window-title-to-bottom-when-fullscreen=false
+show-app-icon=true
+window-active-size-inc=15
+window-title-position='Bottom'
+
+[app_tabs]
+app-tab-config='{\n    "icon-size": 1,\n    "default": {\n        "default_style": {\n            "margin": "0",\n            "border-radius": "0px",\n            "margin-left": "2px",\n            "color": "white"\n        },\n        "active_style": {\n            "background": ""\n        },\n        "hover_style": {\n            "background": "#4b4b4b"\n        }\n    },\n    "light_mode": {\n        "default_style": {},\n        "active_style": {},\n        "hover_style": {}\n    },\n    "dark_mode": {\n        "default_style": {},\n        "active_style": {},\n        "hover_style": {}\n    }\n}'
+ellipsize-mode=false
+panel-max-width=2099
+
+[blur-my-shell]
+hacks-level=0
+pipelines={'pipeline_default': {'name': <'Default'>, 'effects': <[<{'type': <'color'>, 'id': <'effect_04654496156406'>, 'params': <{'color': <(0.0, 0.0, 0.0, 1.0)>}>}>]>}, 'pipeline_default_rounded': {'name': <'Default rounded'>, 'effects': <[<{'type': <'corner'>, 'id': <'effect_78129621821207'>, 'params': <{'radius': <24>}>}>]>}, 'pipeline_28654952756504': {'name': <'New pipeline'>, 'effects': <[<{'type': <'color'>, 'id': <'effect_07498781263424'>, 'params': <{'color': <(0.0, 0.0, 0.0, 0.6600000262260437)>}>}>]>}}
+settings-version=2
+
+[blur-my-shell/appfolder]
+blur=false
+brightness=0.59999999999999998
+sigma=30
+style-dialogs=1
+
+[blur-my-shell/applications]
+blacklist=['Plank', 'com.desktop.ding', 'Conky', 'dev.zed.Zed', 'dev.zed.Zed']
+blur=false
+blur-on-overview=false
+brightness=1.0
+dynamic-opacity=false
+enable-all=true
+opacity=240
+sigma=0
+
+[blur-my-shell/coverflow-alt-tab]
+blur=false
+pipeline='pipeline_28654952756504'
+
+[blur-my-shell/dash-to-dock]
+blur=false
+brightness=0.59999999999999998
+override-background=false
+pipeline='pipeline_default_rounded'
+sigma=16
+static-blur=true
+style-dash-to-dock=0
+unblur-in-overview=false
+
+[blur-my-shell/dash-to-panel]
+blur-original-panel=false
+
+[blur-my-shell/lockscreen]
+blur=false
+pipeline='pipeline_28654952756504'
+
+[blur-my-shell/overview]
+blur=true
+pipeline='pipeline_28654952756504'
+style-components=2
+
+[blur-my-shell/panel]
+blur=false
+brightness=0.59999999999999998
+force-light-text=false
+override-background=false
+override-background-dynamically=true
+pipeline='pipeline_default'
+sigma=15
+static-blur=true
+style-panel=0
+unblur-in-overview=false
+
+[blur-my-shell/screenshot]
+blur=false
+pipeline='pipeline_28654952756504'
+
+[blur-my-shell/window-list]
+blur=false
+brightness=0.59999999999999998
+sigma=30
+
+[color-picker]
+color-collection=[uint32 23371775, 18769653, 1579045, 2369338]
+color-history=[uint32 7886166, 1579045, 18356261, 19277366, 19277366, 18751022, 18356261, 18751022, 19409208, 18751022]
+color-picker-shortcut=['<Alt>q']
+default-format=uint32 0
+enable-notify=true
+enable-preview=true
+enable-shortcut=true
+enable-sound=false
+menu-size=uint32 10
+menu-style=true
+preview-style=uint32 0
+
+[com/github/hermes83/compiz-windows-effect]
+friction=5.0
+mass=20.0
+maximize-effect=false
+resize-effect=false
+speedup-factor-divider=5.0
+spring-k=10.0
+x-tiles=3.0
+y-tiles=3.0
+
+[coverflowalttab]
+animation-time=0.20000000000000001
+dim-factor=0.96999999999999997
+easing-function='ease-linear'
+hide-panel=true
+highlight-mouse-over=false
+icon-style='Classic'
+perspective-correction-method='None'
+position='Top'
+preview-to-monitor-ratio=0.624
+raise-mouse-over=false
+randomize-animation-times=false
+switch-application-behaves-like-switch-windows=true
+switcher-background-color=(0.97647058823529409, 0.88627450980392153, 0.68627450980392157)
+switcher-looping-method='Carousel'
+switcher-style='Coverflow'
+use-glitch-effect=false
+use-tint=false
+
+[customize-clock-on-lockscreen]
+custom-style=false
+date-color='#ffffff'
+font-style='Open Sans'
+hint-color='#ffffff'
+hint-size=28
+remove-date=false
+remove-hint=true
+remove-time=false
+time-color='#ffffff'
+
+[dash-to-dock]
+apply-custom-theme=true
+autohide=true
+autohide-in-fullscreen=true
+background-color='rgb(36,31,49)'
+background-opacity=0.59999999999999998
+click-action='minimize'
+custom-background-color=true
+custom-theme-shrink=true
+dash-max-icon-size=48
+disable-overview-on-startup=true
+dock-fixed=false
+dock-position='BOTTOM'
+extend-height=false
+height-fraction=1.0
+icon-size-fixed=false
+intellihide=true
+intellihide-mode='FOCUS_APPLICATION_WINDOWS'
+middle-click-action='launch'
+preferred-monitor=-2
+preferred-monitor-by-connector='eDP-1'
+preview-size-scale=0.0
+require-pressure-to-show=false
+running-indicator-style='DASHES'
+scroll-action='cycle-windows'
+shift-click-action='minimize'
+shift-middle-click-action='launch'
+show-dock-urgent-notify=false
+show-mounts=false
+show-running=true
+show-trash=true
+transparency-mode='FIXED'
+
+[dash-to-panel]
+animate-appicon-hover-animation-extent={'RIPPLE': 4, 'PLANK': 4, 'SIMPLE': 1}
+appicon-margin=8
+appicon-padding=4
+available-monitors=[0]
+dot-color-dominant=false
+dot-color-override=false
+dot-color-unfocused-different=false
+dot-position='BOTTOM'
+dot-size=5
+dot-style-focused='DASHES'
+dot-style-unfocused='DASHES'
+focus-highlight-dominant=false
+focus-highlight-opacity=75
+hotkeys-overlay-combo='TEMPORARILY'
+intellihide=false
+leftbox-padding=-1
+panel-anchors='{"0":"MIDDLE"}'
+panel-element-positions='{"0":[{"element":"showAppsButton","visible":true,"position":"centered"},{"element":"activitiesButton","visible":false,"position":"stackedTL"},{"element":"taskbar","visible":true,"position":"centered"},{"element":"centerBox","visible":false,"position":"centered"},{"element":"leftBox","visible":false,"position":"stackedTL"},{"element":"rightBox","visible":false,"position":"stackedBR"},{"element":"dateMenu","visible":false,"position":"stackedBR"},{"element":"systemMenu","visible":false,"position":"stackedBR"},{"element":"desktopButton","visible":false,"position":"stackedBR"}]}'
+panel-lengths='{"0":25}'
+panel-positions='{"0":"BOTTOM"}'
+panel-sizes='{"0":48}'
+primary-monitor=0
+show-apps-icon-file=''
+status-icon-padding=-1
+stockgs-keep-dash=true
+stockgs-keep-top-panel=true
+stockgs-panelbtn-click-only=false
+trans-use-custom-bg=false
+trans-use-custom-gradient=false
+trans-use-custom-opacity=false
+tray-padding=-1
+window-preview-title-position='TOP'
+
+[dash2dock-lite]
+animation-bounce=0.75
+animation-fps=0
+animation-magnify=0.0
+animation-rise=0.25
+animation-spread=0.65000000000000002
+apps-icon=true
+apps-icon-front=true
+autohide-dash=true
+autohide-speed=0.0
+blur-background=false
+border-radius=3.0
+calendar-icon=false
+clock-icon=false
+customize-topbar=false
+dock-padding=0.5
+downloads-icon=true
+favorites-only=false
+icon-shadow=false
+icon-size=0.1440677966101695
+icon-spacing=0.0
+items-pullout-angle=0.5
+mounted-icon=true
+msg-to-ext=''
+notification-badge-style=1
+open-app-animation=true
+panel-mode=false
+preferred-monitor=0
+pressure-sense=false
+pressure-sense-sensitivity=0.40000000000000002
+running-indicator-size=0
+running-indicator-style=3
+scroll-sensitivity=0.40000000000000002
+separator-thickness=1
+shrink-icons=true
+trash-icon=true
+
+[date-menu-formatter]
+font-size=12
+pattern=' HH : mm'
+remove-messages-indicator=false
+text-align='center'
+update-level=0
+
+[freon]
+hot-sensors=['__average__', 'in0']
+show-icon-on-panel=true
+show-temperature-unit=true
+show-voltage-unit=true
+
+[gestureImprovements]
+allow-minimize-window=true
+enable-forward-back-gesture=true
+forward-back-application-keyboard-shortcuts={'firefox.desktop': (5, false), 'org.chromium.Chromium.desktop': (5, false), 'microsoft-edge.desktop': (5, false), 'google-chrome.desktop': (1, false), 'org.gnome.gThumb.desktop': (2, false), 'org.gnome.eog.desktop': (3, false), 'org.gnome.Photos.desktop': (3, false), 'shotwell.desktop': (3, false), 'com.spotify.Client.desktop': (4, false), 'code.desktop': (5, false), 'code-insiders.desktop': (5, false), 'org.gnome.Terminal.desktop': (5, false), 'com.gexperts.Tilix.desktop': (5, false), 'org.gnome.TextEditor.desktop': (5, false)}
+pinch-3-finger-gesture='SHOW_DESKTOP'
+
+[highlight-focus]
+disable-hiding=false
+keybinding-highlight-now=['<Super>l']
+
+[just-perfection]
+accessibility-menu=true
+activities-button=false
+alt-tab-small-icon-size=0
+alt-tab-window-preview-size=0
+animation=4
+background-menu=true
+clock-menu=true
+clock-menu-position=0
+clock-menu-position-offset=0
+controls-manager-spacing-size=0
+dash=true
+dash-app-running=true
+dash-icon-size=0
+dash-separator=true
+double-super-to-appgrid=true
+looking-glass-height=0
+looking-glass-width=0
+max-displayed-search-results=15
+notification-banner-position=1
+osd=true
+osd-position=0
+panel=true
+panel-in-overview=true
+panel-notification-icon=true
+panel-size=0
+power-icon=true
+quick-settings=true
+quick-settings-dark-mode=true
+ripple-box=true
+search=true
+show-apps-button=true
+startup-status=1
+theme=false
+top-panel-position=0
+window-demands-attention-focus=false
+window-picker-icon=true
+window-preview-caption=true
+window-preview-close-button=true
+workspace=true
+workspace-background-corner-size=0
+workspace-peek=true
+workspace-popup=true
+workspace-switcher-size=0
+workspace-wrap-around=false
+workspaces-in-app-grid=false
+
+[lennart-k/rounded_corners]
+corner-radius=32
+
+[middleclickclose]
+rearrange-delay=0
+
+[ncom/github/hermes83/compiz-alike-magic-lamp-effect]
+duration=298.0
+effect='default'
+
+[ob]
+blur-brightness=8
+blur-sigma=1
+
+[openbar]
+accent-color=['0', '0.75', '0.75']
+apply-accent-shell=false
+apply-all-shell=false
+apply-menu-notif=false
+apply-menu-shell=false
+auto-bgalpha=false
+autofg-bar=false
+autofg-menu=false
+autohg-bar=true
+autohg-menu=false
+autotheme-font=false
+autotheme-refresh=false
+balpha=0.0
+bartype='Floating'
+bcolor=['0.5960784554481506', '0.4156862795352936', '0.2666666805744171']
+bg-change=true
+bgalpha=0.75
+bgalpha-wmax=1.0
+bgalpha2=0.40999999999999998
+bgcolor=['0.0941176488995552', '0.0941176488995552', '0.14509804546833038']
+bgcolor-wmax=['0.0941176488995552', '0.0941176488995552', '0.14509804546833038']
+bgcolor2=['0', '0.7', '0.75']
+bguri='file:///home/minthi/.config/background'
+border-wmax=false
+boxalpha=0.0
+boxcolor=['0', '0', '0']
+bradius=50.0
+bwidth=5.0
+color-scheme='prefer-dark'
+count1=280490
+count10=5718
+count11=5613
+count12=122
+count2=59941
+count3=44930
+count4=39357
+count5=32475
+count6=27478
+count7=26654
+count8=26302
+count9=11583
+cust-margin-wmax=true
+dark-bcolor=['0.5960784554481506', '0.4156862795352936', '0.2666666805744171']
+dark-bgcolor=['0.0941176488995552', '0.0941176488995552', '0.14509804546833038']
+dark-bgcolor-wmax=['0.0941176488995552', '0.0941176488995552', '0.14509804546833038']
+dark-bguri='file:///home/minthi/.config/background'
+dark-boxcolor=['0', '0', '0']
+dark-dbgcolor=['0.0941176488995552', '0.0941176488995552', '0.14509804546833038']
+dark-fgcolor=['1', '1', '1']
+dark-hcolor=['0.6470588445663452', '0.11372549086809158', '0.1764705926179886']
+dark-mbgcolor=['0.0941176488995552', '0.0941176488995552', '0.14509804546833038']
+dark-mhcolor=['1', '1', '1']
+dark-mscolor=['1', '1', '1']
+dark-palette1=['86', '46', '50']
+dark-palette10=['131', '163', '199']
+dark-palette11=['192', '108', '53']
+dark-palette12=['192', '68', '56']
+dark-palette2=['205', '169', '140']
+dark-palette3=['102', '71', '91']
+dark-palette4=['150', '89', '69']
+dark-palette5=['34', '19', '25']
+dark-palette6=['125', '79', '69']
+dark-palette7=['159', '115', '96']
+dark-palette8=['130', '113', '128']
+dark-palette9=['92', '124', '181']
+dark-smbgcolor=['0.9764705896377563', '0.886274516582489', '0.686274528503418']
+dashdock-style='Custom'
+dbgalpha=0.65000000000000002
+dbgcolor=['0.0941176488995552', '0.0941176488995552', '0.14509804546833038']
+dborder=false
+dbradius=20.0
+default-font='Sans 12'
+disize=47.0
+dshadow=false
+fgcolor=['1', '1', '1']
+gradient=false
+halpha=0.080000000000000002
+hcolor=['0.6470588445663452', '0.11372549086809158', '0.1764705926179886']
+heffect=false
+height=35.0
+hpad=0.0
+import-export=false
+isalpha=1.0
+iscolor=['0.125', '0.125', '0.125']
+light-bguri='file:///home/minthi/.config/background'
+light-palette1=['86', '46', '50']
+light-palette10=['131', '163', '199']
+light-palette11=['192', '108', '53']
+light-palette12=['192', '68', '56']
+light-palette2=['205', '169', '140']
+light-palette3=['102', '71', '91']
+light-palette4=['150', '89', '69']
+light-palette5=['34', '19', '25']
+light-palette6=['125', '79', '69']
+light-palette7=['159', '115', '96']
+light-palette8=['130', '113', '128']
+light-palette9=['92', '124', '181']
+margin=4.5999999999999996
+margin-wmax=0.59999999999999998
+mbalpha=0.0
+mbcolor=['1.0', '1.0', '1.0']
+mbg-gradient=false
+mbgalpha=0.90000000000000002
+mbgcolor=['0.0941176488995552', '0.0941176488995552', '0.14509804546833038']
+menustyle=false
+mfgalpha=1.0
+mfgcolor=['1.0', '1.0', '1.0']
+mhalpha=0.0
+mhcolor=['1', '1', '1']
+msalpha=0.0
+mscolor=['1', '1', '1']
+mshalpha=0.0
+mshcolor=['1.0', '1.0', '1.0']
+neon=false
+neon-wmax=false
+palette1=['86', '46', '50']
+palette10=['131', '163', '199']
+palette11=['192', '108', '53']
+palette12=['192', '68', '56']
+palette2=['205', '169', '140']
+palette3=['102', '71', '91']
+palette4=['150', '89', '69']
+palette5=['34', '19', '25']
+palette6=['125', '79', '69']
+palette7=['159', '115', '96']
+palette8=['130', '113', '128']
+palette9=['92', '124', '181']
+pause-reload=false
+position='Top'
+radius-topleft=true
+reloadstyle=true
+set-fullscreen=false
+set-overview=false
+shadow=false
+shalpha=0.0
+shcolor=['0', '0', '0']
+smbgcolor=['0.9764705896377563', '0.886274516582489', '0.686274528503418']
+smbgoverride=false
+trigger-reload=true
+vpad=0.0
+width-bottom=true
+width-left=true
+width-right=true
+width-top=true
+winbcolor=['0.125', '0.125', '0.125']
+wmax-hbarhint=false
+wmaxbar=true
+
+[panel-date-format]
+format='%Y.%m.%d %H:%M'
+
+[pano]
+active-item-border-color='rgb(70,71,87)'
+global-shortcut=['<Super>v']
+hovered-item-border-color='rgb(70,71,87)'
+icon-pack=uint32 0
+item-size=200
+link-previews=false
+open-links-in-browser=false
+show-indicator=false
+wiggle-indicator=false
+window-background-color='rgba(49,50,68,0.88)'
+
+[pano/code-item]
+body-bg-color='rgba(24,24,37,0.746667)'
+header-bg-color='rgba(24,24,37,0.746667)'
+
+[pano/color-item]
+header-bg-color='rgba(24,24,37,0.746667)'
+
+[pano/file-item]
+body-bg-color='rgba(24,24,37,0.746667)'
+body-color='rgb(250,250,250)'
+header-bg-color='rgba(24,24,37,0.746667)'
+
+[pano/image-item]
+header-bg-color='rgba(24,24,37,0.746667)'
+
+[pano/link-item]
+body-bg-color='rgba(24,24,37,0.746667)'
+header-bg-color='rgba(24,24,37,0.746667)'
+
+[pano/text-item]
+body-bg-color='rgba(24,24,37,0.746667)'
+body-color='rgb(255,255,255)'
+header-bg-color='rgba(24,24,37,0.746667)'
+
+[quick-settings-tweaks]
+add-unsafe-quick-toggle-enabled=false
+datemenu-remove-notifications=true
+input-show-selected=false
+list-buttons='[{"name":"SystemItem","title":null,"visible":true},{"name":"OutputStreamSlider","title":null,"visible":true},{"name":"InputStreamSlider","title":null,"visible":false},{"name":"St_BoxLayout","title":null,"visible":true},{"name":"BrightnessItem","title":null,"visible":false},{"name":"NMWiredToggle","title":"Wired","visible":true},{"name":"NMWirelessToggle","title":"Wi-Fi","visible":true},{"name":"NMModemToggle","title":null,"visible":false},{"name":"NMBluetoothToggle","title":null,"visible":false},{"name":"NMVpnToggle","title":null,"visible":false},{"name":"BluetoothToggle","title":"Bluetooth","visible":true},{"name":"PowerProfilesToggle","title":"Power Mode","visible":false},{"name":"NightLightToggle","title":"Night Light","visible":true},{"name":"DarkModeToggle","title":"Dark Style","visible":true},{"name":"KeyboardBrightnessToggle","title":"Keyboard","visible":false},{"name":"RfkillToggle","title":"Airplane Mode","visible":true},{"name":"RotationToggle","title":"Auto Rotate","visible":false},{"name":"DndQuickToggle","title":"Do Not Disturb","visible":true},{"name":"BackgroundAppsToggle","title":"No Background Apps","visible":false},{"name":"MediaSection","title":null,"visible":false},{"name":"Notifications","title":null,"visible":false}]'
+media-control-compact-mode=true
+notifications-enabled=true
+notifications-hide-when-no-notifications=true
+notifications-integrated=true
+notifications-position='bottom'
+output-show-selected=false
+user-removed-buttons=['DndQuickToggle', 'NightLightToggle', 'KeyboardBrightnessToggle']
+
+[rounded-window-corners-reborn]
+border-color=(0.75, 0.24999998509883881, 0.24999998509883881, 0.0)
+custom-rounded-corner-settings=@a{sv} {}
+focused-shadow={'vertical_offset': 4, 'horizontal_offset': 0, 'blur_offset': 28, 'spread_radius': 4, 'opacity': 60}
+global-rounded-corner-settings={'padding': <{'left': <uint32 1>, 'right': <uint32 1>, 'top': <uint32 1>, 'bottom': <uint32 1>}>, 'keep_rounded_corners': <{'maximized': <false>, 'fullscreen': <false>}>, 'border_radius': <uint32 12>, 'smoothing': <uint32 0>}
+settings-version=uint32 5
+skip-libhandy-app=true
+unfocused-shadow={'vertical_offset': 0, 'horizontal_offset': 0, 'blur_offset': 12, 'spread_radius': 0, 'opacity': 65}
+
+[search-light]
+background-color=(0.11764705926179886, 0.11764705926179886, 0.18039216101169586, 0.76999998092651367)
+blur-background=false
+blur-brightness=0.59999999999999998
+blur-sigma=30.0
+border-color=(1.0, 1.0, 1.0, 1.0)
+border-radius=1.8820754716981132
+border-thickness=0
+currency-converter=false
+entry-font-size=0
+font-size=0
+monitor-count=1
+popup-at-cursor-monitor=false
+preferred-monitor=0
+scale-height=0.0
+scale-width=0.089999999999999997
+shortcut-search=['<Super>space']
+show-panel-icon=true
+unit-converter=false
+window-effect=0
+
+[show-desktop-button]
+panel-position='LEFT_END'
+
+[space-bar/state]
+version=27
+
+[status-area-horizontal-spacing]
+hpadding=0
+
+[top-bar-organizer]
+center-box-order=['Space Bar']
+left-box-order=['uniteAppMenu', 'LogoMenu', 'uniteDesktopLabel', 'AppTabs', 'activities']
+right-box-order=['Translate Clipboard', 'pano@elhan.io', 'Simple-Timer', 'Toggle workspace span', 'vitalsMenu', 'netspeed@alynx.one', 'color-picker@tuberry', 'uniteWindowControls', 'clipboardIndicator', 'uniteTrayIndicator', 'screenRecording', 'screenSharing', 'dwellClick', 'a11y', 'keyboard', 'quickSettings', 'dateMenu', 'Show Desktop Applet Indicator', 'HideItems@fablevi.github.io']
+
+[translate-clipboard]
+enable-trans=true
+
+[unblank]
+time=0
+
+[unite]
+app-menu-ellipsize-mode='end'
+app-menu-max-width=0
+autofocus-windows=false
+desktop-name-text='🐤   Feeling minthy today~~'
+enable-titlebar-actions=true
+extend-left-box=false
+greyscale-tray-icons=false
+hide-activities-button='always'
+hide-app-menu-icon=false
+hide-window-titlebars='never'
+reduce-panel-spacing=false
+restrict-to-primary-screen=true
+show-appmenu-button=true
+show-desktop-name=true
+show-legacy-tray=true
+show-window-buttons='never'
+show-window-title='always'
+use-activities-text=false
+window-buttons-placement='auto'
+
+[user-theme]
+name='catppuccin-mocha-yellow-standard+default'
+
+[vitals]
+alphabetize=false
+fixed-widths=false
+hide-icons=true
+hide-zeros=false
+hot-sensors=['_processor_frequency_', '_temperature_legion_hwmon_cpu temperature_', '__fan_avg__', '__network-rx_max__', '__network-tx_max__']
+icon-style=0
+menu-centered=true
+position-in-panel=2
+show-battery=false
+show-storage=false
+show-temperature=true
+show-voltage=true
+update-time=1
+use-higher-precision=true
+
+[window-thumbnails]
+create-tmb-shortcut=['<Super>t']
+minimize-to-tmb-shortcut=['']
+remove-all-tmb-shortcut=['']
+remove-last-tmb-shortcut=['']
+schema-migrated=true
+switch-source-next-shortcut=['']
+switch-source-prev-shortcut=['']
+toggle-visibility-shortcut=['']
