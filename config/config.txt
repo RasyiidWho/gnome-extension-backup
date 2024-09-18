@@ -1,6 +1,6 @@
 [HideItems]
-allindicator=['VitalsMenuButton', 'Color Picker', 'Gjs_unite_hardpixel_eu_buttons_UniteTrayIndicator', 'Stop Screencast', 'Stop Screen Sharing', 'Dwell Click', 'Accessibility', 'Keyboard', 'Gjs_ui_dateMenu_DateMenuButton', 'Show Desktop Applet']
-nothiddenindicator=['VitalsMenuButton', 'Show Desktop Applet', 'Gjs_ui_dateMenu_DateMenuButton', 'Color Picker']
+allindicator=['Gjs_trayIconsReloaded_selfmade_pl_TrayIndicator_TrayIndicator', 'VitalsMenuButton', 'Color Picker', 'Gjs_unite_hardpixel_eu_buttons_UniteTrayIndicator', 'Stop Screencast', 'Stop Screen Sharing', 'Dwell Click', 'Accessibility', 'Keyboard', 'Show Desktop Applet', 'Gjs_ui_dateMenu_DateMenuButton']
+nothiddenindicator=['VitalsMenuButton', 'Gjs_ui_dateMenu_DateMenuButton']
 topbarupdater='1'
 
 [advanced-alt-tab-window-switcher]
@@ -33,6 +33,10 @@ win-switcher-popup-titles=1
 win-switcher-popup-ws-indexes=false
 win-switcher-single-prev-size=256
 ws-switch-popup=false
+
+[alphabetical-app-grid]
+folder-order-position='end'
+sort-folder-contents=false
 
 [always-show-titles-in-overview]
 always-show-window-closebuttons=false
@@ -119,7 +123,7 @@ sigma=30
 
 [color-picker]
 color-collection=[uint32 23371775, 18769653, 1579045, 2369338]
-color-history=[uint32 8282988, 7886166, 1579045, 18356261, 19277366, 19277366, 18751022, 18356261, 18751022, 19409208]
+color-history=[uint32 1118491, 2500150, 1973806, 2500150, 10581351, 8282988, 7886166, 1579045, 18356261, 19277366]
 color-picker-shortcut=['<Alt>q']
 default-format=uint32 0
 enable-notify=true
@@ -171,15 +175,15 @@ remove-time=false
 time-color='#ffffff'
 
 [dash-to-dock]
-apply-custom-theme=true
+apply-custom-theme=false
 autohide=true
 autohide-in-fullscreen=false
-background-color='rgb(36,31,49)'
+background-color='rgb(30,30,46)'
 background-opacity=0.59999999999999998
 click-action='minimize'
 custom-background-color=true
 custom-theme-shrink=true
-dash-max-icon-size=48
+dash-max-icon-size=46
 disable-overview-on-startup=true
 dock-fixed=false
 dock-position='BOTTOM'
@@ -293,6 +297,36 @@ enable-forward-back-gesture=true
 forward-back-application-keyboard-shortcuts={'firefox.desktop': (5, false), 'org.chromium.Chromium.desktop': (5, false), 'microsoft-edge.desktop': (5, false), 'google-chrome.desktop': (1, false), 'org.gnome.gThumb.desktop': (2, false), 'org.gnome.eog.desktop': (3, false), 'org.gnome.Photos.desktop': (3, false), 'shotwell.desktop': (3, false), 'com.spotify.Client.desktop': (4, false), 'code.desktop': (5, false), 'code-insiders.desktop': (5, false), 'org.gnome.Terminal.desktop': (5, false), 'com.gexperts.Tilix.desktop': (5, false), 'org.gnome.TextEditor.desktop': (5, false)}
 pinch-3-finger-gesture='SHOW_DESKTOP'
 
+[gsconnect]
+devices=['b72ad790_b5cf_404f_ac53_692941a29ee2']
+enabled=false
+id='9fb8317a-3525-417c-80be-95686bd04cf9'
+keep-alive-when-locked=true
+name='cachy'
+
+[gsconnect/device/b72ad790_b5cf_404f_ac53_692941a29ee2]
+certificate-pem='-----BEGIN CERTIFICATE-----\nMIIBkjCCATmgAwIBAgIBATAKBggqhkjOPQQDBDBTMS0wKwYDVQQDDCRiNzJhZDc5\nMF9iNWNmXzQwNGZfYWM1M182OTI5NDFhMjllZTIxFDASBgNVBAsMC0tERSBDb25u\nZWN0MQwwCgYDVQQKDANLREUwHhcNMjMwOTE3MTcwMDAwWhcNMzQwOTE3MTcwMDAw\nWjBTMS0wKwYDVQQDDCRiNzJhZDc5MF9iNWNmXzQwNGZfYWM1M182OTI5NDFhMjll\nZTIxFDASBgNVBAsMC0tERSBDb25uZWN0MQwwCgYDVQQKDANLREUwWTATBgcqhkjO\nPQIBBggqhkjOPQMBBwNCAATCjYc1y4v1g5c846ryauQsAoi4aAUqRZNUuWmfqR05\nfmF9JSYl4l4J4wXknSYXa1OiDRQQkrwfUOonw8h8P1ViMAoGCCqGSM49BAMEA0cA\nMEQCIEz7+StUplE7xwrdizKmKxc03QrD5UcAwuFtrSwONjSTAiAyaJoHyx+Rwvk6\n/Q9gWkB5JYuCfFq04XqIAl2r0IgO2Q==\n-----END CERTIFICATE-----\n'
+incoming-capabilities=['kdeconnect.battery', 'kdeconnect.bigscreen.stt', 'kdeconnect.clipboard', 'kdeconnect.clipboard.connect', 'kdeconnect.contacts.request_all_uids_timestamps', 'kdeconnect.contacts.request_vcards_by_uid', 'kdeconnect.findmyphone.request', 'kdeconnect.mousepad.keyboardstate', 'kdeconnect.mousepad.request', 'kdeconnect.mpris', 'kdeconnect.mpris.request', 'kdeconnect.notification', 'kdeconnect.notification.action', 'kdeconnect.notification.reply', 'kdeconnect.notification.request', 'kdeconnect.ping', 'kdeconnect.runcommand', 'kdeconnect.sftp.request', 'kdeconnect.share.request', 'kdeconnect.share.request.update', 'kdeconnect.sms.request', 'kdeconnect.sms.request_attachment', 'kdeconnect.sms.request_conversation', 'kdeconnect.sms.request_conversations', 'kdeconnect.systemvolume', 'kdeconnect.telephony.request', 'kdeconnect.telephony.request_mute']
+last-connection='lan://192.168.4.2:1716'
+name='Redmi 4'
+outgoing-capabilities=['kdeconnect.battery', 'kdeconnect.bigscreen.stt', 'kdeconnect.clipboard', 'kdeconnect.clipboard.connect', 'kdeconnect.connectivity_report', 'kdeconnect.contacts.response_uids_timestamps', 'kdeconnect.contacts.response_vcards', 'kdeconnect.findmyphone.request', 'kdeconnect.mousepad.echo', 'kdeconnect.mousepad.keyboardstate', 'kdeconnect.mousepad.request', 'kdeconnect.mpris', 'kdeconnect.mpris.request', 'kdeconnect.notification', 'kdeconnect.notification.request', 'kdeconnect.ping', 'kdeconnect.presenter', 'kdeconnect.runcommand.request', 'kdeconnect.sftp', 'kdeconnect.share.request', 'kdeconnect.sms.attachment_file', 'kdeconnect.sms.messages', 'kdeconnect.systemvolume.request', 'kdeconnect.telephony']
+paired=true
+supported-plugins=['battery', 'clipboard', 'connectivity_report', 'contacts', 'findmyphone', 'mousepad', 'mpris', 'notification', 'ping', 'presenter', 'runcommand', 'sftp', 'share', 'sms', 'systemvolume', 'telephony']
+type='phone'
+
+[gsconnect/device/b72ad790_b5cf_404f_ac53_692941a29ee2/plugin/battery]
+custom-battery-notification-value=uint32 80
+
+[gsconnect/device/b72ad790_b5cf_404f_ac53_692941a29ee2/plugin/notification]
+applications='{"Printers":{"iconName":"org.gnome.Settings-printers-symbolic","enabled":true},"Bottles":{"iconName":"com.usebottles.bottles","enabled":true},"Events and Tasks Reminders":{"iconName":"org.gnome.Evolution-alarm-notify","enabled":true},"Telegram Desktop":{"iconName":"telegram","enabled":true},"Zenity":{"iconName":"application-x-executable","enabled":true},"Disks":{"iconName":"org.gnome.DiskUtility","enabled":true},"Date & Time":{"iconName":"org.gnome.Settings-time-symbolic","enabled":true},"Valent":{"iconName":"ca.andyholmes.Valent","enabled":true},"Black Box":{"iconName":"com.raggesilver.BlackBox","enabled":true},"Disk Usage Analyzer":{"iconName":"org.gnome.baobab","enabled":true},"Power":{"iconName":"org.gnome.Settings-power-symbolic","enabled":true},"Color":{"iconName":"org.gnome.Settings-color-symbolic","enabled":true},"Upscaler":{"iconName":"io.gitlab.theevilskeleton.Upscaler","enabled":true},"Files":{"iconName":"org.gnome.Nautilus","enabled":true},"File Roller":{"iconName":"org.gnome.FileRoller","enabled":true}}'
+
+[gsconnect/device/b72ad790_b5cf_404f_ac53_692941a29ee2/plugin/share]
+receive-directory='/home/minthi/Downloads'
+
+[gsconnect/preferences]
+window-maximized=false
+window-size=(996, 575)
+
 [highlight-focus]
 disable-hiding=false
 keybinding-highlight-now=['<Super>l']
@@ -330,7 +364,7 @@ ripple-box=true
 search=true
 show-apps-button=true
 startup-status=1
-theme=false
+theme=true
 top-panel-position=0
 window-demands-attention-focus=false
 window-picker-icon=true
@@ -425,7 +459,7 @@ dark-palette7=['159', '115', '96']
 dark-palette8=['130', '113', '128']
 dark-palette9=['92', '124', '181']
 dark-smbgcolor=['0.9764705896377563', '0.886274516582489', '0.686274528503418']
-dashdock-style='Custom'
+dashdock-style='Default'
 dbgalpha=0.65000000000000002
 dbgcolor=['0.0941176488995552', '0.0941176488995552', '0.14509804546833038']
 dborder=false
@@ -498,7 +532,7 @@ shalpha=0.0
 shcolor=['0', '0', '0']
 smbgcolor=['0.9764705896377563', '0.886274516582489', '0.686274528503418']
 smbgoverride=false
-trigger-reload=true
+trigger-reload=false
 vpad=0.0
 width-bottom=true
 width-left=true
@@ -521,7 +555,7 @@ link-previews=false
 open-links-in-browser=false
 show-indicator=false
 wiggle-indicator=false
-window-background-color='rgba(49,50,68,0.88)'
+window-background-color='rgb(38,38,54)'
 
 [pano/code-item]
 body-bg-color='rgba(24,24,37,0.746667)'
@@ -551,10 +585,10 @@ header-bg-color='rgba(24,24,37,0.746667)'
 add-unsafe-quick-toggle-enabled=false
 datemenu-remove-notifications=true
 input-show-selected=false
-list-buttons='[{"name":"SystemItem","title":null,"visible":true},{"name":"OutputStreamSlider","title":null,"visible":true},{"name":"InputStreamSlider","title":null,"visible":false},{"name":"St_BoxLayout","title":null,"visible":true},{"name":"BrightnessItem","title":null,"visible":true},{"name":"NMWiredToggle","title":"Wired","visible":true},{"name":"NMWirelessToggle","title":"Wi-Fi","visible":true},{"name":"NMModemToggle","title":null,"visible":false},{"name":"NMBluetoothToggle","title":null,"visible":false},{"name":"NMVpnToggle","title":null,"visible":false},{"name":"BluetoothToggle","title":"Bluetooth","visible":true},{"name":"PowerProfilesToggle","title":"Power Mode","visible":true},{"name":"NightLightToggle","title":"Night Light","visible":true},{"name":"DarkModeToggle","title":"Dark Style","visible":true},{"name":"KeyboardBrightnessToggle","title":"Keyboard","visible":true},{"name":"RfkillToggle","title":"Airplane Mode","visible":true},{"name":"RotationToggle","title":"Auto Rotate","visible":false},{"name":"DndQuickToggle","title":"Do Not Disturb","visible":true},{"name":"BackgroundAppsToggle","title":"No Background Apps","visible":false},{"name":"MediaSection","title":null,"visible":false},{"name":"Notifications","title":null,"visible":false}]'
+list-buttons='[{"name":"SystemItem","title":null,"visible":true},{"name":"OutputStreamSlider","title":null,"visible":true},{"name":"InputStreamSlider","title":null,"visible":false},{"name":"St_BoxLayout","title":null,"visible":true},{"name":"BrightnessItem","title":null,"visible":false},{"name":"NMWiredToggle","title":"Wired","visible":true},{"name":"NMWirelessToggle","title":"Wi-Fi","visible":true},{"name":"NMModemToggle","title":null,"visible":false},{"name":"NMBluetoothToggle","title":null,"visible":false},{"name":"NMVpnToggle","title":null,"visible":false},{"name":"BluetoothToggle","title":"Bluetooth","visible":true},{"name":"PowerProfilesToggle","title":"Power Mode","visible":false},{"name":"NightLightToggle","title":"Night Light","visible":true},{"name":"DarkModeToggle","title":"Dark Style","visible":true},{"name":"KeyboardBrightnessToggle","title":"Keyboard","visible":false},{"name":"RfkillToggle","title":"Airplane Mode","visible":true},{"name":"RotationToggle","title":"Auto Rotate","visible":false},{"name":"DndQuickToggle","title":"Do Not Disturb","visible":true},{"name":"BackgroundAppsToggle","title":"No Background Apps","visible":false},{"name":"MediaSection","title":null,"visible":false},{"name":"Notifications","title":null,"visible":true}]'
 media-control-compact-mode=true
 notifications-enabled=true
-notifications-hide-when-no-notifications=true
+notifications-hide-when-no-notifications=false
 notifications-integrated=true
 notifications-position='bottom'
 output-show-selected=false
@@ -601,8 +635,8 @@ hpadding=0
 
 [top-bar-organizer]
 center-box-order=['Space Bar']
-left-box-order=['uniteAppMenu', 'LogoMenu', 'uniteDesktopLabel', 'AppTabs', 'activities']
-right-box-order=['Translate Clipboard', 'pano@elhan.io', 'Simple-Timer', 'Toggle workspace span', 'vitalsMenu', 'netspeed@alynx.one', 'color-picker@tuberry', 'uniteWindowControls', 'clipboardIndicator', 'uniteTrayIndicator', 'screenRecording', 'screenSharing', 'dwellClick', 'a11y', 'keyboard', 'quickSettings', 'dateMenu', 'Show Desktop Applet Indicator', 'HideItems@fablevi.github.io']
+left-box-order=['uniteAppMenu', 'LogoMenu', 'AppTabs', 'uniteDesktopLabel', 'activities']
+right-box-order=['/org/gnome/Shell/Extensions/GSConnect/Device/b72ad790_b5cf_404f_ac53_692941a29ee2', 'TrayIconsReloaded', 'Translate Clipboard', 'pano@elhan.io', 'Simple-Timer', 'Toggle workspace span', 'vitalsMenu', 'netspeed@alynx.one', 'color-picker@tuberry', 'uniteWindowControls', 'clipboardIndicator', 'uniteTrayIndicator', 'screenRecording', 'screenSharing', 'dwellClick', 'a11y', 'keyboard', 'quickSettings', 'dateMenu', 'HideItems@fablevi.github.io', 'Show Desktop Applet Indicator']
 
 [translate-clipboard]
 enable-trans=true
