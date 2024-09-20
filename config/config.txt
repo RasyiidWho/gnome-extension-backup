@@ -1,5 +1,5 @@
 [HideItems]
-allindicator=['Gjs_trayIconsReloaded_selfmade_pl_TrayIndicator_TrayIndicator', 'VitalsMenuButton', 'Color Picker', 'Gjs_unite_hardpixel_eu_buttons_UniteTrayIndicator', 'Stop Screencast', 'Stop Screen Sharing', 'Dwell Click', 'Accessibility', 'Keyboard', 'Show Desktop Applet', 'Gjs_ui_dateMenu_DateMenuButton']
+allindicator=['VitalsMenuButton', 'Show Desktop Applet', 'Color Picker', 'Gjs_unite_hardpixel_eu_buttons_UniteTrayIndicator', 'Stop Screencast', 'Stop Screen Sharing', 'Dwell Click', 'Accessibility', 'Keyboard', 'Gjs_ui_dateMenu_DateMenuButton']
 nothiddenindicator=['VitalsMenuButton', 'Gjs_ui_dateMenu_DateMenuButton']
 topbarupdater='1'
 
@@ -123,7 +123,7 @@ sigma=30
 
 [color-picker]
 color-collection=[uint32 23371775, 18769653, 1579045, 2369338]
-color-history=[uint32 1118491, 2500150, 1973806, 2500150, 10581351, 8282988, 7886166, 1579045, 18356261, 19277366]
+color-history=[uint32 9406601, 9406601, 1118491, 1118491, 2500150, 1973806, 2500150, 10581351, 8282988, 7886166]
 color-picker-shortcut=['<Alt>q']
 default-format=uint32 0
 enable-notify=true
@@ -178,12 +178,12 @@ time-color='#ffffff'
 apply-custom-theme=false
 autohide=true
 autohide-in-fullscreen=false
-background-color='rgb(30,30,46)'
-background-opacity=0.59999999999999998
-click-action='previews'
-custom-background-color=true
+background-color='rgb(17,17,27)'
+background-opacity=0.40000000000000002
+click-action='minimize-or-previews'
+custom-background-color=false
 custom-theme-shrink=true
-dash-max-icon-size=46
+dash-max-icon-size=48
 disable-overview-on-startup=true
 dock-fixed=false
 dock-position='BOTTOM'
@@ -197,7 +197,7 @@ preferred-monitor=-2
 preferred-monitor-by-connector='eDP-1'
 preview-size-scale=0.0
 require-pressure-to-show=false
-running-indicator-style='DASHES'
+running-indicator-style='DOTS'
 scroll-action='cycle-windows'
 shift-click-action='previews'
 shift-middle-click-action='launch'
@@ -524,7 +524,7 @@ palette9=['92', '124', '181']
 pause-reload=false
 position='Top'
 radius-topleft=true
-reloadstyle=false
+reloadstyle=true
 set-fullscreen=true
 set-overview=true
 shadow=false
@@ -585,7 +585,7 @@ header-bg-color='rgba(24,24,37,0.746667)'
 add-unsafe-quick-toggle-enabled=false
 datemenu-remove-notifications=true
 input-show-selected=false
-list-buttons='[{"name":"SystemItem","title":null,"visible":true},{"name":"OutputStreamSlider","title":null,"visible":true},{"name":"InputStreamSlider","title":null,"visible":false},{"name":"St_BoxLayout","title":null,"visible":true},{"name":"BrightnessItem","title":null,"visible":false},{"name":"NMWiredToggle","title":"Wired","visible":true},{"name":"NMWirelessToggle","title":"Wi-Fi","visible":true},{"name":"NMModemToggle","title":null,"visible":false},{"name":"NMBluetoothToggle","title":null,"visible":false},{"name":"NMVpnToggle","title":null,"visible":false},{"name":"BluetoothToggle","title":"Bluetooth","visible":true},{"name":"PowerProfilesToggle","title":"Power Mode","visible":false},{"name":"NightLightToggle","title":"Night Light","visible":true},{"name":"DarkModeToggle","title":"Dark Style","visible":true},{"name":"KeyboardBrightnessToggle","title":"Keyboard","visible":false},{"name":"RfkillToggle","title":"Airplane Mode","visible":true},{"name":"RotationToggle","title":"Auto Rotate","visible":false},{"name":"DndQuickToggle","title":"Do Not Disturb","visible":true},{"name":"BackgroundAppsToggle","title":"No Background Apps","visible":false},{"name":"MediaSection","title":null,"visible":false},{"name":"Notifications","title":null,"visible":true}]'
+list-buttons='[{"name":"SystemItem","title":null,"visible":true},{"name":"OutputStreamSlider","title":null,"visible":true},{"name":"InputStreamSlider","title":null,"visible":false},{"name":"St_BoxLayout","title":null,"visible":true},{"name":"BrightnessItem","title":null,"visible":false},{"name":"NMWiredToggle","title":"Wired","visible":true},{"name":"NMWirelessToggle","title":"Wi-Fi","visible":true},{"name":"NMModemToggle","title":null,"visible":false},{"name":"NMBluetoothToggle","title":null,"visible":false},{"name":"NMVpnToggle","title":null,"visible":false},{"name":"BluetoothToggle","title":"Bluetooth","visible":true},{"name":"PowerProfilesToggle","title":"Power Mode","visible":true},{"name":"NightLightToggle","title":"Night Light","visible":true},{"name":"DarkModeToggle","title":"Dark Style","visible":true},{"name":"KeyboardBrightnessToggle","title":"Keyboard","visible":false},{"name":"RfkillToggle","title":"Airplane Mode","visible":true},{"name":"RotationToggle","title":"Auto Rotate","visible":false},{"name":"DndQuickToggle","title":"Do Not Disturb","visible":true},{"name":"BackgroundAppsToggle","title":"No Background Apps","visible":false},{"name":"MediaSection","title":null,"visible":false},{"name":"Notifications","title":null,"visible":true}]'
 media-control-compact-mode=true
 notifications-enabled=true
 notifications-hide-when-no-notifications=false
@@ -631,12 +631,12 @@ panel-position='LEFT_END'
 version=27
 
 [status-area-horizontal-spacing]
-hpadding=0
+hpadding=8
 
 [top-bar-organizer]
 center-box-order=['Space Bar']
 left-box-order=['uniteAppMenu', 'LogoMenu', 'AppTabs', 'uniteDesktopLabel', 'activities']
-right-box-order=['/org/gnome/Shell/Extensions/GSConnect/Device/b72ad790_b5cf_404f_ac53_692941a29ee2', 'TrayIconsReloaded', 'Translate Clipboard', 'pano@elhan.io', 'Simple-Timer', 'Toggle workspace span', 'vitalsMenu', 'netspeed@alynx.one', 'color-picker@tuberry', 'uniteWindowControls', 'clipboardIndicator', 'uniteTrayIndicator', 'screenRecording', 'screenSharing', 'dwellClick', 'a11y', 'keyboard', 'quickSettings', 'dateMenu', 'HideItems@fablevi.github.io', 'Show Desktop Applet Indicator']
+right-box-order=['vitalsMenu', '/org/gnome/Shell/Extensions/GSConnect/Device/b72ad790_b5cf_404f_ac53_692941a29ee2', 'TrayIconsReloaded', 'Translate Clipboard', 'pano@elhan.io', 'Simple-Timer', 'Toggle workspace span', 'netspeed@alynx.one', 'Show Desktop Applet Indicator', 'color-picker@tuberry', 'uniteWindowControls', 'clipboardIndicator', 'uniteTrayIndicator', 'screenRecording', 'screenSharing', 'dwellClick', 'a11y', 'quickSettings', 'keyboard', 'dateMenu', 'HideItems@fablevi.github.io']
 
 [translate-clipboard]
 enable-trans=true
@@ -655,7 +655,7 @@ greyscale-tray-icons=false
 hide-activities-button='always'
 hide-app-menu-icon=false
 hide-window-titlebars='never'
-reduce-panel-spacing=false
+reduce-panel-spacing=true
 restrict-to-primary-screen=false
 show-appmenu-button=true
 show-desktop-name=true
@@ -666,7 +666,7 @@ use-activities-text=false
 window-buttons-placement='auto'
 
 [user-theme]
-name='catppuccin-mocha-yellow-standard+default'
+name='Colloid-Yellow-Dark-Catppuccin'
 
 [vitals]
 alphabetize=false
