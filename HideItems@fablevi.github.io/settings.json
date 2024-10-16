@@ -1,9 +1,8 @@
 {
     "state": "1",
-    "visibility": false,
+    "visibility": true,
     "defaultVisibility": false,
     "visibleChildren": [
-        "VitalsMenuButton",
         "Gjs_ui_dateMenu_DateMenuButton"
     ]
 }

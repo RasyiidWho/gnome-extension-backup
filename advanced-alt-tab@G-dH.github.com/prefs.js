@@ -16,32 +16,33 @@ import * as OptionsFactory from './src/optionsFactory.js';
 
 import { ExtensionPreferences } from 'resource:///org/gnome/Shell/Extensions/js/extensions/prefs.js';
 
+import { Actions } from './src/enum.js';
+
 // gettext
 let _;
 
-const Actions = Settings.Actions;
-
 function _getActionList() {
     return [
-        [_('Do Nothing'),                      Actions.NONE],
-        [_('Close Switcher Popup'),            Actions.HIDE],
-        [_('Select Next/Previous'),            Actions.SELECT_ITEM],
-        [_('Activate'),                        Actions.ACTIVATE],
-        [_('Switch Workspace'),                Actions.SWITCH_WS],
-        [_('Open New Window'),                 Actions.NEW_WINDOW],
-        [_('Show / Preview'),                  Actions.SHOW],
-        [_('Open Context Menu'),               Actions.MENU],
-        [_('Switch Filter Mode'),              Actions.SWITCH_FILTER],
-        [_('Toggle Single App Mode'),          Actions.SINGLE_APP],
-        [_('Toggle Switcher Mode'),            Actions.SWITCHER_MODE],
-        [_('Close/Quit Selected'),             Actions.CLOSE_QUIT],
-        [_('Force Quit Selected App'),         Actions.KILL],
-        [_('Move Selected to Current WS/Monitor'), Actions.MOVE_TO_WS],
-        [_('Toggle Fullscreen on Empty WS'),   Actions.FS_ON_NEW_WS],
-        [_('Sort Windows by Applications'),    Actions.GROUP_APP],
-        [_('Sort Current Monitor First'),      Actions.CURRENT_MON_FIRST],
+        [_('Do Nothing'),                                        Actions.NONE],
+        [_('Close Switcher Popup'),                              Actions.HIDE],
+        [_('Select Next/Previous'),                              Actions.SELECT_ITEM],
+        [_('Activate'),                                          Actions.ACTIVATE],
+        [_('Switch Workspace'),                                  Actions.SWITCH_WS],
+        [_('Open New Window'),                                   Actions.NEW_WINDOW],
+        [_('Show / Preview'),                                    Actions.SHOW],
+        [_('Open Context Menu'),                                 Actions.MENU],
+        [_('Switch Filter Mode'),                                Actions.SWITCH_FILTER],
+        [_('Toggle Single App Mode'),                            Actions.SINGLE_APP],
+        [_('Toggle Switcher Mode'),                              Actions.SWITCHER_MODE],
+        [_('Close/Quit Selected'),                               Actions.CLOSE_QUIT],
+        [_('Force Quit Selected App'),                           Actions.KILL],
+        [_('Move Selected to Current WS/Monitor'),               Actions.MOVE_TO_WS],
+        [_('Toggle Fullscreen on Empty WS'),                     Actions.FS_ON_NEW_WS],
+        [_('Toggle Minimize'),                                   Actions.MINIMIZE],
+        [_('Sort Windows by Applications'),                      Actions.GROUP_APP],
+        [_('Sort Current Monitor First'),                        Actions.CURRENT_MON_FIRST],
         [_('Create Window Thumbnail (requires WTMB extension)'), Actions.THUMBNAIL],
-        [_('Open Preferences'),                Actions.PREFS],
+        [_('Open Preferences'),                                  Actions.PREFS],
     ];
 }
 
@@ -132,6 +133,8 @@ export default class AATWS extends ExtensionPreferences {
             o.HoverSelectsItem,
             o.DelayShowingSwitcher,
             o.InteractiveIndicators,
+            o.ShowIfNoWin,
+            o.SecondTabSwitchFilter,
             // ---------------
             o.AppearanceCommon,
             o.WsThumbnails,
@@ -141,11 +144,6 @@ export default class AATWS extends ExtensionPreferences {
             o.ShowDirectActivation,
             o.ShowStatus,
             o.SingleAppPreviewSize,
-            // ---------------
-            o.Super,
-            o.SuperKeyMode,
-            o.EnableSuper,
-            o.SuperDoublePress,
             // ---------------
             o.Input,
             o.RememberInput,
@@ -218,15 +216,23 @@ export default class AATWS extends ExtensionPreferences {
             o.HotEdgePressure,
             o.HotEdgeWidth,
             // ---------------
-            o.ExternalTrigger,
-            o.SingleOnActivate,
-            o.AppStableOrder,
-            o.AppIncludeFavorites,
+            o.Super,
+            o.SuperKeyMode,
+            o.EnableSuper,
+            o.SuperDoublePress,
+            // ---------------
+            o.DashMode,
             o.AutomaticallyReverseOrder,
             o.PointerOutTimeout,
             o.ActivateOnHide,
             o.MousePointerPosition,
             o.AnimationTimeFactor,
+            // ---------------
+            o.DashAppSwitcher,
+            o.DashActivateToSingle,
+            o.DashAppStableOrder,
+            o.DashAppIncludeFavorites,
+            o.DashAppIncludeShowAppsIcon,
             // ---------------
             o.Dash,
             o.ShowDash,
@@ -331,7 +337,7 @@ export default class AATWS extends ExtensionPreferences {
             [
                 [_('Disable'), 1],
                 [_('Show Preview'), 2],
-                [_('Show Window'), 3],
+                // [_('Show Window'), 3],
             ]
         );
 
@@ -362,6 +368,21 @@ export default class AATWS extends ExtensionPreferences {
             itemFactory.newSwitch(),
             'switcherPopupInteractiveIndicators'
         );
+
+        optDict.ShowIfNoWin = itemFactory.getRowWidget(
+            _('Show Favorite Apps When No Window Open'),
+            _('If no normal window is open, AATWS can show you a list of favorite applications pinned to dash instead, allowing you to (search and) launch a new one'),
+            itemFactory.newSwitch(),
+            'switcherPopupShowIfNoWin'
+        );
+
+        optDict.SecondTabSwitchFilter = itemFactory.getRowWidget(
+            _('Press Tab Again to Switch Filter'),
+            _("This option enables switching the filter to a less restrictive mode when there is only one item in the list and you press a tab key again, so you don't need to use the hotkey for switching the filter"),
+            itemFactory.newSwitch(),
+            'switcherPopupSecondTabSwitchFilter'
+        );
+
 
         optDict.Content = itemFactory.getRowWidget(
             _('Content')
@@ -719,7 +740,7 @@ export default class AATWS extends ExtensionPreferences {
 
         optDict.SearchApplications = itemFactory.getRowWidget(
             _('Search Applications'),
-            _('Searches for installed applications to launch new ones when no window matches the specified pattern'),
+            _('Searches for installed applications to launch new ones when no window matches the specified search query'),
             itemFactory.newSwitch(),
             'winSwitcherPopupSearchApps'
         );
@@ -935,11 +956,32 @@ export default class AATWS extends ExtensionPreferences {
 
         // //////////////////////////////////////////////////////////////////////////////////////////////
 
-        optDict.ExternalTrigger = itemFactory.getRowWidget(
-            _('Options for the mouse triggered switcher (using Hot Edge or CHC-E extension)')
+        optDict.DashAppSwitcher = itemFactory.getRowWidget(
+            _('App Switcher')
         );
 
-        optDict.SingleOnActivate = itemFactory.getRowWidget(
+        optDict.DashAppIncludeFavorites = itemFactory.getRowWidget(
+            _('Include Favorite (Pinned) Apps'),
+            _('Include favorite apps pinned to Dash regardless the App switcher settings'),
+            itemFactory.newSwitch(),
+            'switcherPopupExtAppFavorites'
+        );
+
+        optDict.DashAppIncludeShowAppsIcon = itemFactory.getRowWidget(
+            _('Include Show Apps Icon'),
+            _('Adds a button to access application grid'),
+            itemFactory.newSwitch(),
+            'switcherPopupExtAppShowAppsIcon'
+        );
+
+        optDict.DashAppStableOrder = itemFactory.getRowWidget(
+            _('Stable Sequence'),
+            _('Show app switcher items in stable order, as they are in the default Dash'),
+            itemFactory.newSwitch(),
+            'switcherPopupExtAppStable'
+        );
+
+        optDict.DashActivateToSingle = itemFactory.getRowWidget(
             _('Show App Windows Instead of Direct Activation'),
             _('Choose between immediate activation of the clicked app (activated by a mouse button set to Activate Item) or switch to the window list to access other available windows (based on the current filter setting)'),
             itemFactory.newDropDown(),
@@ -951,18 +993,8 @@ export default class AATWS extends ExtensionPreferences {
             ]
         );
 
-        optDict.AppIncludeFavorites = itemFactory.getRowWidget(
-            _('Force App Switcher Include Favorites (Pinned)'),
-            _('Include favorite apps pinned to Dash to the App switcher regardless the App switcher settings.'),
-            itemFactory.newSwitch(),
-            'switcherPopupExtAppFavorites'
-        );
-
-        optDict.AppStableOrder = itemFactory.getRowWidget(
-            _('Force App Switcher Stable Sequence'),
-            _('When the app switcher is triggered using a mouse, the default app order can be overridden to behave more like a dock. Pinned (favorite) apps (if included) maintain the order they have in the Dash, and other open apps keep the order in which they were launched'),
-            itemFactory.newSwitch(),
-            'switcherPopupExtAppStable'
+        optDict.DashMode = itemFactory.getRowWidget(
+            _('Dash Mode Options (AATWS opened using a hot edge or Super key)')
         );
 
         optDict.AutomaticallyReverseOrder = itemFactory.getRowWidget(
@@ -1199,24 +1231,40 @@ All hotkeys work directly or with Shift key pressed, if it's set in Preferences 
         );
 
         optionList.push(itemFactory.getRowWidget(
-            _('Shift for Action Hotkeys'),
-            _('Single-key action hotkeys, excluding navigation and filter switching, now require holding down the Shift key'),
+            _('Require Shift for Action Hotkeys'),
+            _('If enabled, single-key action hotkeys, excluding navigation and filter switching, now require holding down the Shift key to prevent unintentional actions'),
             itemFactory.newSwitch(),
             'switcherPopupShiftHotkeys'
         )
         );
 
         optionList.push(itemFactory.getRowWidget(
-            _('Filter mode'),
-            _('Switches the window/app filter mode - ALL / WS / MONITOR (the Monitor mode is skipped if single monitor is used or if the secondary monitor is empty).'),
+            _('Delete Key to Close'),
+            _('If enabled, the Delete key can be used to close selected window or app. If disabled, the key can be used to clear search query'),
+            itemFactory.newSwitch(),
+            'switcherPopupDelKeyClose'
+        )
+        );
+
+        optionList.push(itemFactory.getRowWidget(
+            _('Switch Filter Mode Temporary'),
+            _('Temporarily switches the window/app filter mode - ALL / WS / MONITOR (the Monitor mode is skipped if single monitor is used or if the secondary monitor is empty).'),
             itemFactory.newEntry(),
             'hotkeySwitchFilter'
         )
         );
 
         optionList.push(itemFactory.getRowWidget(
+            _('Switch Filter Mode Permanently'),
+            _('Permanently (as if switched in Settings window) switches the window/app filter mode - ALL / WS / MONITOR (the Monitor mode is skipped if single monitor is used or if the secondary monitor is empty).'),
+            itemFactory.newEntry(),
+            'hotkeySwitchFilterPermanent'
+        )
+        );
+
+        optionList.push(itemFactory.getRowWidget(
             _('Search Mode'),
-            _('In the search mode, you can enter multiple patterns separated by a space and in arbitrary order to search windows and apps by window titles, app names, app generic names, description, categories, keywords, and app executables. This allows you to find most editor apps by typing "edit", games by typing "game", and so on. You can even search for sections in the GNOME Settings app'),
+            _('In the search mode, you can enter multiple strings separated by a space and in arbitrary order to search windows and apps by window titles, app names, app generic names, description, categories, keywords, and app executables. This allows you to find most editor apps by typing "edit", games by typing "game", and so on. You can even search for sections in the GNOME Settings app'),
             itemFactory.newEntry(),
             'hotkeySearch'
         )
@@ -1299,9 +1347,18 @@ Next use of this hotkey on the same window moves the window back to its original
         optionList.push(itemFactory.getRowWidget(
             _('Maximize on Current Workspace/Monitor'),
             _('Selected window will be maximized on the current workspace and monitor.\
-The current monitor is the one where the switcher pop-up is located, or where the mouse pointer is currently positioned if the switcher was triggered by a mouse.'),
+The current monitor is the one where the switcher pop-up is located'),
             itemFactory.newEntry(),
             'hotkeyMaximize'
+        )
+        );
+
+        optionList.push(itemFactory.getRowWidget(
+            _('Toggle Minimize'),
+            _('Minimize the selected window, or un-minimize it on the current workspace and monitor.\
+The current monitor is the one where the switcher pop-up is located'),
+            itemFactory.newEntry(),
+            'hotkeyMinimize'
         )
         );
 
@@ -1448,7 +1505,7 @@ The current monitor is the one where the switcher pop-up is located, or where th
 
         optionList.push(itemFactory.getRowWidget(
             _('Clear Search Entry'),
-            _('Clears typed pattern when the switcher is in Search mode.'),
+            _('Clears the typed search query when the switcher is in Search mode.'),
             itemFactory.newEntry(),
             _('Del')
         )

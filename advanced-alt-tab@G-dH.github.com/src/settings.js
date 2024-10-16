@@ -12,33 +12,6 @@
 import Gio from 'gi://Gio';
 import GLib from 'gi://GLib';
 
-export const Actions = {
-    NONE:              0,
-    SELECT_ITEM:       1,
-    ACTIVATE:          2,
-    SINGLE_APP:        3,
-    SWITCH_FILTER:     4,
-    SWITCHER_MODE:     5,
-    SWITCH_WS:         6,
-    GROUP_APP:         7,
-    CURRENT_MON_FIRST: 8,
-    MENU:              9,
-    SHOW:             10,
-    MOVE_TO_WS:       11,
-    THUMBNAIL:        12,
-    HIDE:             13,
-    CLOSE_QUIT:       14,
-    CLOSE_ALL_APP:    15, // close all windows of selected application
-    KILL:             16,
-    NEW_WINDOW:       17,
-    ALLWAYS_ON_TOP:   18,
-    STICKY:           19, // always on visible ws
-    MOVE_MAX:         20, // move window to the current ws and maximize it
-    FS_ON_NEW_WS:     21, // fullscreen window on new ws next to the current one
-
-    PREFS:            99,
-};
-
 const ColorStyleDefault = {
     STYLE: ' ',
     SWITCHER_LIST: ' ',
@@ -138,6 +111,7 @@ export const Options = class Options {
             switcherPopupPosition: ['int', 'switcher-popup-position'],
             switcherPopupMonitor: ['int', 'switcher-popup-monitor'],
             switcherPopupShiftHotkeys: ['boolean', 'switcher-popup-shift-hotkeys'],
+            switcherPopupDelKeyClose: ['boolean', 'switcher-popup-del-key-close'],
             switcherPopupTimeout: ['int', 'switcher-popup-timeout'],
             switcherPopupPreviewSelected: ['int', 'switcher-popup-preview-selected'],
             switcherPopupUpDownAction: ['int', 'switcher-popup-up-down-action'],
@@ -159,6 +133,8 @@ export const Options = class Options {
             switcherPopupSyncFilter: ['boolean', 'switcher-popup-sync-filter'],
             switcherPopupTheme: ['int', 'switcher-popup-theme'],
             switcherPopupInteractiveIndicators: ['boolean', 'switcher-popup-interactive-indicators'],
+            switcherPopupShowIfNoWin: ['boolean', 'switcher-popup-show-if-no-win'],
+            switcherPopupSecondTabSwitchFilter: ['boolean', 'switcher-popup-second-tab-switch-filter'],
             switcherWsThumbnails: ['int', 'switcher-ws-thumbnails'],
             singleAppPreviewSize: ['int', 'win-switcher-single-prev-size'],
             winSwitcherPopupFilter: ['int', 'win-switcher-popup-filter'],
@@ -200,11 +176,13 @@ export const Options = class Options {
             wsShowSwitcherPopup: ['boolean', 'ws-switch-popup'],
             switcherPopupPointer: ['boolean', 'switcher-popup-pointer'],
             switcherPopupExtAppFavorites: ['boolean', 'switcher-popup-ext-app-favorites'],
+            switcherPopupExtAppShowAppsIcon: ['boolean', 'switcher-popup-ext-app-show-apps-icon'],
             switcherPopupExtAppStable: ['boolean', 'switcher-popup-ext-app-stable'],
             switcherPopupReverseAuto: ['boolean', 'switcher-popup-reverse-auto'],
             switcherPopupPointerTimeout: ['int', 'switcher-popup-pointer-timeout'],
             switcherPopupActivateOnHide: ['boolean', 'switcher-popup-activate-on-hide'],
             hotkeySwitchFilter: ['string', 'hotkey-switch-filter'],
+            hotkeySwitchFilterPermanent: ['string', 'hotkey-switch-filter-permanent'],
             hotkeySingleApp: ['string', 'hotkey-single-app'],
             hotkeyCloseQuit: ['string', 'hotkey-close-quit'],
             hotkeySearch: ['string', 'hotkey-search'],
@@ -215,6 +193,7 @@ export const Options = class Options {
             hotkeyCloseAllApp: ['string', 'hotkey-close-all-app'],
             hotkeyFsOnNewWs: ['string', 'hotkey-fs-on-new-ws'],
             hotkeyMaximize: ['string', 'hotkey-maximize'],
+            hotkeyMinimize: ['string', 'hotkey-minimize'],
             hotkeyGroupWs: ['string', 'hotkey-group-ws'],
             hotkeySwitcherMode: ['string', 'hotkey-switcher-mode'],
             hotkeyThumbnail: ['string', 'hotkey-thumbnail'],
@@ -324,9 +303,10 @@ export const Options = class Options {
     }
 
     _setOptionConstants() {
+        this.ENABLE_SUPER          = this.get('enableSuper');
         this.SUPER_DOUBLE_PRESS_ACT = this.get('superDoublePressAction'); // 1 - dafault, 2, Overview, 3 - App Grid, 4 - Activate Previous Window
         this.POSITION_POINTER      = this.get('switcherPopupPointer'); // place popup at pointer position
-        this.REVERSE_AUTO          = this.get('switcherPopupReverseAuto');  // reverse list in order to the first item be closer to the mouse pointer. only if !KEYBOARD_TRIGGERED
+        this.REVERSE_AUTO          = this.get('switcherPopupReverseAuto');  // reverse list in order to the first item be closer to the mouse pointer. only if !_keyboardTriggered
         this.POPUP_POSITION        = this.get('switcherPopupPosition');
         this.NO_MODS_TIMEOUT       = this.get('switcherPopupPointerTimeout');
         this.INITIAL_DELAY         = this.get('switcherPopupTimeout');
@@ -335,6 +315,7 @@ export const Options = class Options {
         this.UP_DOWN_ACTION        = this.get('switcherPopupUpDownAction');
         this.HOT_KEYS              = this.get('switcherPopupHotKeys');
         this.SHIFT_AZ_HOTKEYS      = this.get('switcherPopupShiftHotkeys');
+        this.DELETE_KEY_CLOSE      = this.get('switcherPopupDelKeyClose');
         this.STATUS                = this.get('switcherPopupStatus');
         this.PREVIEW_SELECTED      = this.get('switcherPopupPreviewSelected');
         this.SEARCH_ALL            = this.get('winSwitcherPopupSearchAll');
@@ -349,6 +330,8 @@ export const Options = class Options {
         this.WS_THUMBNAILS         = this.get('switcherWsThumbnails');
         this.ANIMATION_TIME_FACTOR = this.get('animationTimeFactor') / 100;
         this.SHOW_WS_SWITCHER_POPUP = this.get('wsShowSwitcherPopup');
+        this.SHOW_IF_NO_WIN        = this.get('switcherPopupShowIfNoWin');
+        this.SECOND_TAB_SWITCH     = this.get('switcherPopupSecondTabSwitchFilter');
 
         // Window switcher
         this.WIN_FILTER_MODE       = this.get('winSwitcherPopupFilter');
@@ -378,8 +361,11 @@ export const Options = class Options {
         this.APP_MODE_ICON_SIZE    = this.get('appSwitcherPopupIconSize');
         this.SEARCH_PREF_RUNNING   = this.get('appSwitcherPopupSearchPrefRunning');
         this.INCLUDE_SHOW_APPS_ICON = this.get('appSwitcherPopupIncludeShowAppsIcon');
-        this.SHOW_WINS_ON_ACTIVATE = this.get('appSwitcherPopupShowWinsOnActivate');
-        this.INCLUDE_FAV_MOUSE     = this.get('switcherPopupExtAppFavorites');
+        this.LIST_WINS_ON_ACTIVATE = this.get('appSwitcherPopupShowWinsOnActivate');
         this.COLOR_STYLE_DEFAULT   = !this.get('switcherPopupTheme');
+
+        this.DASH_APP_STABLE_SEQUENCE = this.get('switcherPopupExtAppStable');
+        this.DASH_APP_INCLUDE_FAVORITES = this.get('switcherPopupExtAppFavorites');
+        this.DASH_APP_INCLUDE_APPS_ICON = this.get('switcherPopupExtAppShowAppsIcon');
     }
 };

@@ -98,6 +98,9 @@
     <key name='switcher-popup-ext-app-favorites' type='b'>
       <default>true</default>
     </key>
+    <key name='switcher-popup-ext-app-show-apps-icon' type='b'>
+      <default>true</default>
+    </key>
     <key name='switcher-popup-ext-app-stable' type='b'>
       <default>true</default>
     </key>
@@ -111,6 +114,12 @@
       <default>3</default>
     </key>
     <key name='switcher-popup-interactive-indicators' type='b'>
+      <default>true</default>
+    </key>
+    <key name='switcher-popup-show-if-no-win' type='b'>
+      <default>true</default>
+    </key>
+    <key name='switcher-popup-second-tab-switch-filter' type='b'>
       <default>true</default>
     </key>
     <key name='switcher-popup-hot-keys' type='b'>
@@ -214,6 +223,9 @@
     <key name='switcher-popup-shift-hotkeys' type='b'>
       <default>false</default>
     </key>
+    <key name='switcher-popup-del-key-close' type='b'>
+      <default>false</default>
+    </key>
     <key name='switcher-popup-wrap' type='b'>
       <default>true</default>
     </key>
@@ -251,6 +263,9 @@
     <key name='hotkey-switch-filter' type='s'>
       <default>'Q'</default>
     </key>
+    <key name='hotkey-switch-filter-permanent' type='s'>
+      <default>''</default>
+    </key>
     <key name='hotkey-close-quit' type='s'>
       <default>'W'</default>
     </key>
@@ -280,6 +295,9 @@
     </key>
     <key name='hotkey-maximize' type='s'>
       <default>'M'</default>
+    </key>
+    <key name='hotkey-minimize' type='s'>
+      <default>'D'</default>
     </key>
     <key name='hotkey-group-ws' type='s'>
       <default>'G'</default>
